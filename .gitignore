@@ -1,0 +1,13 @@
+*.log
+*.out
+*.toc
+*.dvi
+*.aux
+*.css
+main.pdf
+ARacketTextbook-JP.pdf
+*.html
+*.tex
+*.map
+*.sh
+
