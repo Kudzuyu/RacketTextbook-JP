@@ -3,12 +3,11 @@
 *.toc
 *.dvi
 *.aux
-*.css
 main.pdf
 test.pdf
 ARacketTextbook-JP.pdf
+RacketTextbook.pdf
 *.html
 *.tex
 *.map
 *.sh
-
