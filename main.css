@@ -1,0 +1,201 @@
+html {
+  orphans: 2;
+  widows: 2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans CJK JP Regular";
+  margin: 10px;
+  counter-reset: chapter 0;
+}
+
+h1:not(.title):before{
+  counter-increment: chapter 1;
+  content: counter(chapter) " ";
+}
+
+#mokuji {
+  font-size: 15px;
+}
+
+#TOC {
+  background-color: whitesmoke;
+}
+
+#TOC ul{
+  list-style-type: none;
+  margin-left: 3em;
+  margin-right: auto;
+  text-align: left;
+}
+/*
+#TOC a::after {
+  content: leader(dotted) " " target-counter(attr(href, url), page);
+}
+*/
+
+pre {
+  background-color: whitesmoke;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.pbreak {
+  page-break-after: always;
+}
+
+@page {
+  size: 210mm 297mm;
+  margin-top: 10mm;
+  margin-bottom: 10mm;
+  margin-left: 10mm;
+  margin-right: 10mm;
+  /* The followings are inherited to page-margin boxes */
+  /*
+  font-family: "Ricty", Georgia, serif;
+  */
+  font-size: 9pt;
+  vertical-align: top;
+}
+@page :left {
+  /* top-left header */
+  /*
+  @top-left {
+    content: "RacketTextbook-JP";
+    margin-bottom: 4mm;
+    border-bottom: 2pt solid #000;
+  }
+  */
+  /* bottom-left page number */
+  @bottom-left {
+    content: counter(page);
+    margin-top: 6mm;
+    margin-bottom: 10mm;
+  }
+}
+@page :right {
+  /* top-right header (only for border) */
+  /*
+  @top-right {
+    content: "RacketTextbook-JP";
+    margin-bottom: 4mm;
+    border-bottom: 2pt solid #000;
+  }
+  */
+  /* bottom-right page number */
+  @bottom-right {
+    content: counter(page);
+    margin-top: 6mm;
+    margin-bottom:10mm;
+  }
+}
+html {
+  font-family: "Ricty", Georgia, serif;
+  font-weight: normal;
+  font-size: 9pt;
+  line-height: 18pt;
+}
+
+h1{
+  font-weight: bold;
+  font-size: 15pt;
+  line-height: 1em;
+  margin-bottom: 10pt;
+  text-indent: 0;
+  /* forbid page/column break after it */
+  page-break-before: always;
+     page-break-after: avoid;
+
+}
+
+h2 {
+  font-size: 12pt;
+  font-weight: bold;
+  text-indent: 0;
+  /* forbid page/column break after it */
+     page-break-after: avoid;
+  line-height: 32pt;
+  margin-top: 16pt;
+}t
+.subtitle {
+  -weasy-bookmark-level: none;
+}
+.author {
+  -weasy-bookmark-level: none;
+}
+
+h3 {
+  -weasy-bookmark-level: none;
+}
+
+p {
+  text-indent: 1em;
+}
+
+p strong {
+  text-indent: -1em;
+}
+
+ul {
+  margin-left:3em
+}
+
+ul li{
+  /*
+  padding-left: 2em;
+  */
+  position: relative;
+  list-style: none;
+}
+
+ul li::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -1.5em;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border: 1px solid #3498db;
+  border-radius: 100%;
+}
+
+p.dropcap {
+  text-indent: 0;
+  min-width: 20pt;
+}
+
+p.dropcap span.dropcap {
+  font-size: 36pt;
+  float: left;
+  line-height: 36pt;
+  margin-right: 2.25pt;
+}
+
+p.author {
+  text-indent: 0;
+  text-align: right;
+}
+
+.title {
+  text-align: center;
+  font-size: 43pt;
+  margin-top: 200px;
+}
+.subtitle {
+  text-align: center;
+  font-size:30px;
+  margin-top: 250px;
+}
+.author {
+  text-align: center;
+  font-size:28px;
+  margin-top: 20pt;
+}
