@@ -10,13 +10,9 @@ html {
 
 body {
   font-family: "Noto Sans CJK JP Regular";
+  font-size: 14px;
   margin: 10px;
   counter-reset: chapter 0;
-}
-
-h1:not(.title):before{
-  counter-increment: chapter 1;
-  content: counter(chapter) " ";
 }
 
 #mokuji {
@@ -33,6 +29,10 @@ h1:not(.title):before{
   margin-right: auto;
   text-align: left;
 }
+
+sup {
+  font-size: 9px;
+}
 /*
 #TOC a::after {
   content: leader(dotted) " " target-counter(attr(href, url), page);
@@ -41,6 +41,8 @@ h1:not(.title):before{
 
 pre {
   background-color: whitesmoke;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -102,6 +104,7 @@ html {
   line-height: 18pt;
 }
 
+
 h1{
   font-weight: bold;
   font-size: 15pt;
@@ -119,18 +122,15 @@ h2 {
   font-weight: bold;
   text-indent: 0;
   /* forbid page/column break after it */
-     page-break-after: avoid;
   line-height: 32pt;
   margin-top: 16pt;
-}t
-.subtitle {
-  -weasy-bookmark-level: none;
-}
-.author {
-  -weasy-bookmark-level: none;
 }
 
-h3 {
+.chap1 h2 {
+  page-break-before: always;
+}
+
+h3,.subtitle,.author {
   -weasy-bookmark-level: none;
 }
 
@@ -140,6 +140,12 @@ p {
 
 p strong {
   text-indent: -1em;
+}
+
+table, td, th {
+  border-collapse: collapse;
+  border: 1px #000000 solid;
+  padding: 2px 3px;
 }
 
 ul {
@@ -154,7 +160,7 @@ ul li{
   list-style: none;
 }
 
-ul li::after {
+ul li:not(.matome)::after {
   display: block;
   content: '';
   position: absolute;
@@ -165,6 +171,19 @@ ul li::after {
   background-color: #fff;
   border: 1px solid #3498db;
   border-radius: 100%;
+}
+
+.matome li::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: .5em;
+  left: -1em;
+  width: 8px;
+  height: 3px;
+  border-left: 2px solid #3498db;
+  border-bottom: 2px solid #3498db;
+  transform: rotate(-45deg);
 }
 
 p.dropcap {
@@ -188,6 +207,8 @@ p.author {
   text-align: center;
   font-size: 43pt;
   margin-top: 200px;
+  text-align: center;
+  border: 3px solid #63a7bd;
 }
 .subtitle {
   text-align: center;
